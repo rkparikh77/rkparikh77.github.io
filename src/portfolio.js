@@ -2,25 +2,25 @@
 
 // Website related settings
 const settings = {
-  isSplash: true, // Change this to false if you don't want Splash screen.
+  isSplash: false, // Change this to false if you don't want Splash screen.
 };
 
 //SEO Related settings
 const seo = {
-  title: "Ashutosh's Portfolio",
+  title: "Rahil's Portfolio",
   description:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
+    "Full Stack & Control Systems Engineer with expertise in C++, Python, ROS, and distributed systems, specializing in real-time robotics, machine learning pipelines, and high-performance computing. Proven track record of reducing latency by 70%, developing cross-platform applications, and leading multi-disciplinary teams. Experienced in building low-level infrastructure, architecting microservices, and delivering scalable, fault-tolerant solutions for AI, robotics, and embedded systems. Adept at device networking, communication protocols, and embedded Linux environments, with direct customer-facing deployment and debugging experience.",
   og: {
-    title: "Ashutosh Hathidara Portfolio",
+    title: "Rahil Parikh Portfolio",
     type: "website",
-    url: "http://ashutoshhathidara.com/",
+    url: "https://rkparikh77.github.io",
   },
 };
 
 //Home Page
 const greeting = {
-  title: "Ashutosh Hathidara",
-  logo_name: "AshutoshHathidara",
+  title: "Rahil Parikh",
+  logo_name: "RahilParikh",
   nickname: "layman_brother",
   subTitle:
     "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
@@ -32,10 +32,10 @@ const greeting = {
 
 const socialMediaLinks = [
   /* Your Social Media Link */
-  // github: "https://github.com/ashutosh1919",
-  // linkedin: "https://www.linkedin.com/in/ashutosh-hathidara-88710b138/",
-  // gmail: "ashutoshhathidara98@gmail.com",
-  // gitlab: "https://gitlab.com/ashutoshhathidara98",
+  // github: "https://github.com/rkparikh77",
+  // linkedin: "www.linkedin.com/in/rahilp7",
+  // gmail: "parikhrahil7@gmail.com",
+  // gitlab: "https://gitlab.com/RahilParikh98",
   // facebook: "https://www.facebook.com/laymanbrother.19/",
   // twitter: "https://twitter.com/ashutosh_1919",
   // instagram: "https://www.instagram.com/layman_brother/"
@@ -60,7 +60,7 @@ const socialMediaLinks = [
   },
   {
     name: "Gmail",
-    link: "mailto:ashutoshhathidara98@gmail.com",
+    link: "mailto:RahilParikh98@gmail.com",
     fontAwesomeIcon: "fa-google", // Reference https://fontawesome.com/icons/google?style=brands
     backgroundColor: "#D14836", // Reference https://simpleicons.org/?q=gmail
   },
@@ -734,7 +734,7 @@ const contactPageData = {
     title: "Blogs",
     subtitle:
       "I like to document some of my experiences in professional career journey as well as some technical knowledge sharing.",
-    link: "https://blogs.ashutoshhathidara.com/",
+    link: "https://blogs.RahilParikh.com/",
     avatar_image_path: "blogs_image.svg",
   },
   addressSection: {
