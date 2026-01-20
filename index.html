@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAHIL PARIKH // SYSTEMS ENGINEER</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         * {
@@ -62,7 +65,7 @@
             position: fixed;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -71,8 +74,15 @@
         }
 
         @keyframes gridPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
         }
 
         /* Animated Scanlines */
@@ -80,20 +90,23 @@
             position: fixed;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 255, 255, 0.03),
-                rgba(0, 255, 255, 0.03) 1px,
-                transparent 1px,
-                transparent 2px
-            );
+            background: repeating-linear-gradient(0deg,
+                    rgba(0, 255, 255, 0.03),
+                    rgba(0, 255, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 2px);
             pointer-events: none;
             animation: scanline 8s linear infinite;
         }
 
         @keyframes scanline {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(50px); }
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(50px);
+            }
         }
 
         /* Particle System */
@@ -115,12 +128,21 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) translateX(0);
                 opacity: 0;
             }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
             100% {
                 transform: translateY(-100vh) translateX(100px);
                 opacity: 0;
@@ -152,8 +174,15 @@
         }
 
         @keyframes logoGlow {
-            0%, 100% { text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary); }
-            50% { text-shadow: 0 0 30px var(--primary), 0 0 60px var(--primary), 0 0 80px var(--primary); }
+
+            0%,
+            100% {
+                text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary);
+            }
+
+            50% {
+                text-shadow: 0 0 30px var(--primary), 0 0 60px var(--primary), 0 0 80px var(--primary);
+            }
         }
 
         .status-indicators {
@@ -181,8 +210,17 @@
         }
 
         @keyframes statusPulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
         }
 
         /* Hero Section */
@@ -224,6 +262,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -269,19 +308,51 @@
         }
 
         @keyframes glitch1 {
-            0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(-3px); }
-            40% { transform: translateX(3px); }
-            60% { transform: translateX(-3px); }
-            80% { transform: translateX(3px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-3px);
+            }
+
+            40% {
+                transform: translateX(3px);
+            }
+
+            60% {
+                transform: translateX(-3px);
+            }
+
+            80% {
+                transform: translateX(3px);
+            }
         }
 
         @keyframes glitch2 {
-            0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(3px); }
-            40% { transform: translateX(-3px); }
-            60% { transform: translateX(3px); }
-            80% { transform: translateX(-3px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(3px);
+            }
+
+            40% {
+                transform: translateX(-3px);
+            }
+
+            60% {
+                transform: translateX(3px);
+            }
+
+            80% {
+                transform: translateX(-3px);
+            }
         }
 
         .hero-subtitle {
@@ -370,7 +441,9 @@
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         /* Stats HUD */
@@ -400,8 +473,13 @@
             font-size: 24px;
         }
 
-        .section-title::before { left: 0; }
-        .section-title::after { right: 0; }
+        .section-title::before {
+            left: 0;
+        }
+
+        .section-title::after {
+            right: 0;
+        }
 
         .stats-grid {
             display: grid;
@@ -762,11 +840,11 @@
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
-            
+
             #robot-3d {
                 height: 400px;
             }
-            
+
             .hero-title {
                 font-size: 64px;
             }
@@ -794,20 +872,20 @@
             .hud-nav {
                 padding: 20px;
             }
-            
+
             .status-indicators {
                 display: none;
             }
-            
+
             .hero-title {
                 font-size: 48px;
             }
-            
+
             .projects-grid {
                 grid-template-columns: 1fr;
                 padding: 60px 20px;
             }
-            
+
             .stats-hud,
             .experience-section,
             .certifications-grid,
@@ -817,6 +895,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
@@ -856,7 +935,7 @@
                     <span class="glitch" data-text="PARIKH">PARIKH</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Control Systems Engineer | Robotics Architect | ML Developer
+                    Control Systems Software Engineer | Robotics Architect | ML Developer
                 </p>
                 <p class="hero-tagline">
                     // BUILDING AUTONOMOUS SYSTEMS FOR TOMORROW
@@ -901,9 +980,9 @@
                 <h3 class="project-title">HUMANOID LOCOMOTION</h3>
                 <div class="project-date">AUG 2022 - AUG 2024</div>
                 <p class="project-desc">
-                    Led multidisciplinary team of 12 developing inverse kinematics control systems 
-                    enabling dynamic bipedal balance and human-like gait. Designed and fabricated 
-                    mechanism achieving stable locomotion. Secured prototype funding through technical 
+                    Led multidisciplinary team of 12 developing inverse kinematics control systems
+                    enabling dynamic bipedal balance and human-like gait. Designed and fabricated
+                    mechanism achieving stable locomotion. Secured prototype funding through technical
                     presentations to advisory board.
                 </p>
                 <div class="project-tech">
@@ -922,9 +1001,9 @@
                 <h3 class="project-title">PREDICTIVE ML ENGINE</h3>
                 <div class="project-date">SEPT 2024 - PRESENT</div>
                 <p class="project-desc">
-                    End-to-end pipeline achieving 90% directional accuracy for stock market forecasting 
-                    using LSTM networks. Implemented data preprocessing, training workflows, and 
-                    interactive visualizations. Deployed via Docker containers with real-time REST API 
+                    End-to-end pipeline achieving 90% directional accuracy for stock market forecasting
+                    using LSTM networks. Implemented data preprocessing, training workflows, and
+                    interactive visualizations. Deployed via Docker containers with real-time REST API
                     inference capabilities processing 10+ years of historical data.
                 </p>
                 <div class="project-tech">
@@ -943,9 +1022,9 @@
                 <h3 class="project-title">AUTONOMOUS NAV SYSTEM</h3>
                 <div class="project-date">OCT 2021 - DEC 2021</div>
                 <p class="project-desc">
-                    SLAM implementation with 2D LiDAR achieving 95% navigation success in complex 
-                    environments. Integrated A* pathfinding with AMCL localization and particle 
-                    filters for precision indoor mapping. Demonstrated complete navigation system 
+                    SLAM implementation with 2D LiDAR achieving 95% navigation success in complex
+                    environments. Integrated A* pathfinding with AMCL localization and particle
+                    filters for precision indoor mapping. Demonstrated complete navigation system
                     in miniature test environment as lead software developer.
                 </p>
                 <div class="project-tech">
@@ -964,9 +1043,9 @@
                 <h3 class="project-title">HOSPITAL MANAGEMENT</h3>
                 <div class="project-date">JAN 2021 - MAR 2021</div>
                 <p class="project-desc">
-                    Architected full-stack application with OAuth 2.0 authentication, role-based 
-                    access control, and Google Maps API for indoor navigation with floor-level 
-                    accuracy. Led team of 12 as captain and joint lead developer delivering weekly 
+                    Architected full-stack application with OAuth 2.0 authentication, role-based
+                    access control, and Google Maps API for indoor navigation with floor-level
+                    accuracy. Led team of 12 as captain and joint lead developer delivering weekly
                     presentations to panel of judges and 80+ students.
                 </p>
                 <div class="project-tech">
@@ -984,9 +1063,9 @@
                 <h3 class="project-title">MOTION PLANNING</h3>
                 <div class="project-date">AUG 2021 - OCT 2021</div>
                 <p class="project-desc">
-                    Developed consistent color-sorting algorithm utilizing computer vision achieving 
-                    100% accuracy. Implemented trajectory generation through forward and inverse 
-                    kinematics using object-oriented programming in C++ and MATLAB for robotic arm 
+                    Developed consistent color-sorting algorithm utilizing computer vision achieving
+                    100% accuracy. Implemented trajectory generation through forward and inverse
+                    kinematics using object-oriented programming in C++ and MATLAB for robotic arm
                     manipulation.
                 </p>
                 <div class="project-tech">
@@ -1003,8 +1082,8 @@
                 <h3 class="project-title">AI PATHFINDING</h3>
                 <div class="project-date">JAN 2021 - MAR 2021</div>
                 <p class="project-desc">
-                    Implemented advanced search algorithms including Iterative Deepening Search, 
-                    A*, Hill-Climbing, and Genetic Search to solve Heavy Queens Chess problem. 
+                    Implemented advanced search algorithms including Iterative Deepening Search,
+                    A*, Hill-Climbing, and Genetic Search to solve Heavy Queens Chess problem.
                     Demonstrated optimization techniques and heuristic-based problem solving.
                 </p>
                 <div class="project-tech">
@@ -1021,8 +1100,8 @@
                 <h3 class="project-title">SOLAR PANEL ROBOT</h3>
                 <div class="project-date">JAN 2020 - MAR 2020</div>
                 <p class="project-desc">
-                    Designed autonomous robot to replace solar collector panels achieving 100% 
-                    reliability in control, dynamics, and mechanical design tests. Integrated 
+                    Designed autonomous robot to replace solar collector panels achieving 100%
+                    reliability in control, dynamics, and mechanical design tests. Integrated
                     sensors and actuators for precise manipulation tasks.
                 </p>
                 <div class="project-tech">
@@ -1039,8 +1118,8 @@
                 <h3 class="project-title">EMOTICON COMPILER</h3>
                 <div class="project-date">JAN 2020 - FEB 2020</div>
                 <p class="project-desc">
-                    Developed emoticon programming language using large language models to 
-                    articulate content through emojis. Competed with 20 teams at WPI Hackathon 
+                    Developed emoticon programming language using large language models to
+                    articulate content through emojis. Competed with 20 teams at WPI Hackathon
                     demonstrating innovative approach to programming language design.
                 </p>
                 <div class="project-tech">
@@ -1066,13 +1145,20 @@
                     <div class="experience-company">Bridge12 Technologies • Natick, MA</div>
                     <div class="experience-desc">
                         <ul>
-                            <li>Co-lead multithreaded control software development using Qt, C++, Python, and QML for multi-device state machine capability</li>
-                            <li>Built custom Linux distributions (kernel, root filesystem, boot images) for NVIDIA Jetson Nano and Orin NX using Yocto Project</li>
-                            <li>Optimized network latency in feedback control loops using ZeroMQ, reducing buffer delays from 5s to <1.5s (70% improvement)</li>
-                            <li>Developed high-speed ML search & track algorithm processing 100,000+ data points in under 75ms</li>
-                            <li>Cross-platform Android and iOS app development with TCP/IP and UDP networking protocols</li>
-                            <li>Deploy systems at customer sites alongside leadership performing live testing, debugging, and technical training</li>
-                            <li>Contributed to HUGO web development implementing SEO strategies increasing traffic by 20%</li>
+                            <li>Co-lead multithreaded control software development using Qt, C++, Python, and QML for
+                                multi-device state machine capability</li>
+                            <li>Built custom Linux distributions (kernel, root filesystem, boot images) for NVIDIA
+                                Jetson Nano and Orin NX using Yocto Project</li>
+                            <li>Optimized network latency in feedback control loops using ZeroMQ, reducing buffer delays
+                                from 5s to <1.5s (70% improvement)</li>
+                            <li>Developed high-speed ML search & track algorithm processing 100,000+ data points in
+                                under 75ms</li>
+                            <li>Cross-platform Android and iOS app development with TCP/IP and UDP networking protocols
+                            </li>
+                            <li>Deploy systems at customer sites alongside leadership performing live testing,
+                                debugging, and technical training</li>
+                            <li>Contributed to HUGO web development implementing SEO strategies increasing traffic by
+                                20%</li>
                         </ul>
                     </div>
                 </div>
@@ -1087,12 +1173,16 @@
                     <div class="experience-company">Ekotrope • Boston, MA</div>
                     <div class="experience-desc">
                         <ul>
-                            <li>Full-stack development for energy modeling SaaS platform in collaborative Agile Scrum environment</li>
+                            <li>Full-stack development for energy modeling SaaS platform in collaborative Agile Scrum
+                                environment</li>
                             <li>Developed RESTful APIs and front-end architecture using Java, Maven, and AWS</li>
                             <li>Refactored MariaDB/MySQL database architecture improving transaction speed by 20%</li>
-                            <li>Created and executed JUnit test suites validating modeling accuracy, reducing defects by 18%</li>
-                            <li>Managed client ad-hoc requests on production application using Agile project management (Jira)</li>
-                            <li>Presented weekly bug fixes and feature upgrades to internal and external stakeholders</li>
+                            <li>Created and executed JUnit test suites validating modeling accuracy, reducing defects by
+                                18%</li>
+                            <li>Managed client ad-hoc requests on production application using Agile project management
+                                (Jira)</li>
+                            <li>Presented weekly bug fixes and feature upgrades to internal and external stakeholders
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1107,10 +1197,11 @@
                     <div class="experience-company">Worcester Polytechnic Institute</div>
                     <div class="experience-desc">
                         <ul>
-                            <li>Dual degree with GPA: 3.8/4.0</li>
+                            <li>Dual degree with GPA: 4.0/4.0</li>
                             <li>Dean's List (All Semesters) | Presidential Scholarship | UPE Honor Society</li>
                             <li>Rho Beta Epsilon Robotics Society | SWEET Fellowship Program</li>
-                            <li>Relevant Coursework: Machine Learning, Computer Vision, Distributed Systems, Real-Time Control Systems, Algorithms, Data Structures</li>
+                            <li>Relevant Coursework: Machine Learning, Computer Vision, Distributed Systems, Real-Time
+                                Control Systems, Algorithms, Data Structures</li>
                         </ul>
                     </div>
                 </div>
@@ -1127,8 +1218,8 @@
                 <h3 class="cert-title">J.P. Morgan - Software Engineering</h3>
                 <div class="cert-issuer">Forage • January 2026</div>
                 <p class="cert-desc">
-                    Integrated Kafka into Spring Boot microservice consuming high-volume transaction 
-                    messages. Implemented validation and persistence logic with Spring Data JPA and 
+                    Integrated Kafka into Spring Boot microservice consuming high-volume transaction
+                    messages. Implemented validation and persistence logic with Spring Data JPA and
                     H2 SQL database. Connected to external REST APIs and developed query endpoints.
                 </p>
             </div>
@@ -1138,8 +1229,8 @@
                 <h3 class="cert-title">J.P. Morgan - Quantitative Research</h3>
                 <div class="cert-issuer">Forage • January 2026</div>
                 <p class="cert-desc">
-                    Analyzed loan portfolios to estimate default probability. Used dynamic programming 
-                    to convert FICO scores into categorical data. Applied quantitative research methods 
+                    Analyzed loan portfolios to estimate default probability. Used dynamic programming
+                    to convert FICO scores into categorical data. Applied quantitative research methods
                     for financial analysis.
                 </p>
             </div>
@@ -1149,8 +1240,8 @@
                 <h3 class="cert-title">Electronic Arts - Software Engineering</h3>
                 <div class="cert-issuer">Forage • January 2026</div>
                 <p class="cert-desc">
-                    Proposed features for EA Sports College Football and created technical documentation. 
-                    Built class diagrams and C++ header files. Patched bugfixes and optimized codebase 
+                    Proposed features for EA Sports College Football and created technical documentation.
+                    Built class diagrams and C++ header files. Patched bugfixes and optimized codebase
                     implementing improved data structures.
                 </p>
             </div>
@@ -1160,8 +1251,8 @@
                 <h3 class="cert-title">Walmart USA - Advanced Software Engineering</h3>
                 <div class="cert-issuer">Forage • January 2026</div>
                 <p class="cert-desc">
-                    Developed novel heap data structure in Java for shipping department. Designed UML 
-                    class diagrams for data processor with multiple operating modes. Created entity 
+                    Developed novel heap data structure in Java for shipping department. Designed UML
+                    class diagrams for data processor with multiple operating modes. Created entity
                     relationship diagram for database design.
                 </p>
             </div>
@@ -1192,7 +1283,7 @@
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-            
+
             setTimeout(() => {
                 cursorFollower.style.left = e.clientX + 'px';
                 cursorFollower.style.top = e.clientY + 'px';
@@ -1215,14 +1306,14 @@
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, robotContainer.clientWidth / robotContainer.clientHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        
+
         renderer.setSize(robotContainer.clientWidth, robotContainer.clientHeight);
         renderer.setClearColor(0x000000, 0);
         robotContainer.appendChild(renderer.domElement);
 
         // Create Robot Head
         const headGeometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-        const headMaterial = new THREE.MeshPhongMaterial({ 
+        const headMaterial = new THREE.MeshPhongMaterial({
             color: 0x00ffff,
             emissive: 0x00ffff,
             emissiveIntensity: 0.3,
@@ -1235,7 +1326,7 @@
 
         // Create Robot Eyes
         const eyeGeometry = new THREE.SphereGeometry(0.2, 16, 16);
-        const eyeMaterial = new THREE.MeshBasicMaterial({ 
+        const eyeMaterial = new THREE.MeshBasicMaterial({
             color: 0xffff00,
             emissive: 0xffff00,
             emissiveIntensity: 1
@@ -1247,7 +1338,7 @@
 
         // Create Robot Body
         const bodyGeometry = new THREE.BoxGeometry(2, 2.5, 1);
-        const bodyMaterial = new THREE.MeshPhongMaterial({ 
+        const bodyMaterial = new THREE.MeshPhongMaterial({
             color: 0xff00ff,
             emissive: 0xff00ff,
             emissiveIntensity: 0.2,
@@ -1259,7 +1350,7 @@
 
         // Create Energy Core
         const coreGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-        const coreMaterial = new THREE.MeshBasicMaterial({ 
+        const coreMaterial = new THREE.MeshBasicMaterial({
             color: 0xffff00,
             emissive: 0xffff00,
             emissiveIntensity: 1
@@ -1349,13 +1440,14 @@
 
         // Interactive hover effects
         document.querySelectorAll('.stat-panel, .project-panel, .cert-card, .experience-content').forEach(panel => {
-            panel.addEventListener('mouseenter', function() {
+            panel.addEventListener('mouseenter', function () {
                 this.style.zIndex = '10';
             });
-            panel.addEventListener('mouseleave', function() {
+            panel.addEventListener('mouseleave', function () {
                 this.style.zIndex = '1';
             });
         });
     </script>
 </body>
+
 </html>
