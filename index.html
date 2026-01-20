@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAHIL PARIKH // SYSTEM INTERFACE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00ffff;
+            --secondary: #ff00ff;
+            --accent: #ffff00;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --light: #ffffff;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--secondary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        /* Holographic Grid Background */
+        .hologram-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridPulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Animated Scanlines */
+        .scanlines {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 255, 0.03),
+                rgba(0, 255, 255, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        /* Particle System */
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* HUD Navigation */
+        .hud-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-hud {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: var(--primary);
+            text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary);
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary); }
+            50% { text-shadow: 0 0 30px var(--primary), 0 0 60px var(--primary), 0 0 80px var(--primary); }
+        }
+
+        .status-indicators {
+            display: flex;
+            gap: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 100px 60px;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .system-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 84px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.4s forwards;
+        }
+
+        .hero-title .glitch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title .glitch::before,
+        .hero-title .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-title .glitch::before {
+            color: var(--primary);
+            animation: glitch1 2s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .hero-title .glitch::after {
+            color: var(--secondary);
+            animation: glitch2 2s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch1 {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-3px); }
+            40% { transform: translateX(3px); }
+            60% { transform: translateX(-3px); }
+            80% { transform: translateX(3px); }
+        }
+
+        @keyframes glitch2 {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(3px); }
+            40% { transform: translateX(-3px); }
+            60% { transform: translateX(3px); }
+            80% { transform: translateX(-3px); }
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.6s forwards;
+        }
+
+        .hero-tagline {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 50px;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.8s forwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s 1s forwards;
+        }
+
+        .btn-holo {
+            padding: 18px 45px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        }
+
+        .btn-holo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-holo:hover::before {
+            left: 100%;
+        }
+
+        .btn-holo:hover {
+            box-shadow: 0 0 30px var(--primary), inset 0 0 30px rgba(0, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .btn-holo.secondary {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-holo.secondary::before {
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+        }
+
+        .btn-holo.secondary:hover {
+            box-shadow: 0 0 30px var(--secondary), inset 0 0 30px rgba(255, 0, 255, 0.2);
+        }
+
+        /* Holographic Robot */
+        .robot-container {
+            position: relative;
+            height: 600px;
+            opacity: 0;
+            animation: fadeIn 1.5s 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .robot-hologram {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .robot-core {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateY(0deg); }
+            50% { transform: translateY(-30px) rotateY(10deg); }
+        }
+
+        /* Robot Head */
+        .robot-head {
+            position: absolute;
+            width: 120px;
+            height: 140px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border: 2px solid var(--primary);
+            clip-path: polygon(20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 80%, 0 20%);
+            box-shadow: 
+                0 0 30px rgba(0, 255, 255, 0.5),
+                inset 0 0 30px rgba(0, 255, 255, 0.2);
+            animation: headPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes headPulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 30px rgba(0, 255, 255, 0.2); }
+            50% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.8), inset 0 0 50px rgba(0, 255, 255, 0.4); }
+        }
+
+        /* Robot Eyes */
+        .robot-eye {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 50px;
+            box-shadow: 0 0 20px var(--primary);
+            animation: eyeGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes eyeGlow {
+            0%, 100% { box-shadow: 0 0 20px var(--primary); }
+            50% { box-shadow: 0 0 40px var(--primary), 0 0 60px var(--primary); }
+        }
+
+        .robot-eye.left { left: 25px; }
+        .robot-eye.right { right: 25px; }
+
+        /* Robot Body */
+        .robot-body {
+            position: absolute;
+            width: 180px;
+            height: 200px;
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 255, 0.05));
+            border: 2px solid var(--secondary);
+            clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 100%, 0 100%, 0 15%);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+        }
+
+        /* Energy Core */
+        .energy-core {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, var(--accent), transparent);
+            border-radius: 50%;
+            animation: coreRotate 4s linear infinite;
+        }
+
+        @keyframes coreRotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .energy-core::before,
+        .energy-core::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            animation: coreExpand 2s ease-out infinite;
+        }
+
+        @keyframes coreExpand {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .energy-core::after {
+            animation-delay: 1s;
+        }
+
+        /* Circuit Lines */
+        .circuit-line {
+            position: absolute;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .circuit-h {
+            width: 80px;
+            height: 2px;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: circuitPulse 2s ease-in-out infinite;
+        }
+
+        .circuit-v {
+            width: 2px;
+            height: 60px;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: circuitPulse 2s 0.5s ease-in-out infinite;
+        }
+
+        @keyframes circuitPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Data Stream */
+        .data-stream {
+            position: absolute;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            color: var(--primary);
+            opacity: 0.6;
+            animation: dataFlow 3s ease-in-out infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+
+        .data-stream:nth-child(1) { top: 100%; left: 20%; animation-delay: 0s; }
+        .data-stream:nth-child(2) { top: 100%; left: 50%; animation-delay: 1s; }
+        .data-stream:nth-child(3) { top: 100%; left: 80%; animation-delay: 2s; }
+
+        /* Stats HUD */
+        .stats-hud {
+            padding: 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 80px;
+            letter-spacing: 4px;
+            color: var(--primary);
+            text-shadow: 0 0 20px var(--primary);
+            position: relative;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '//';
+            position: absolute;
+            color: var(--secondary);
+            font-size: 24px;
+        }
+
+        .section-title::before { left: 0; }
+        .section-title::after { right: 0; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-panel {
+            position: relative;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 255, 0.05));
+            border: 2px solid var(--primary);
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+            transition: all 0.4s;
+        }
+
+        .stat-panel:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 255, 255, 0.4);
+            border-color: var(--secondary);
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 30px var(--accent);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 50px;
+            padding: 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-panel {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.03), rgba(255, 0, 255, 0.03));
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            padding: 50px;
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+            transition: all 0.4s;
+            overflow: hidden;
+        }
+
+        .project-panel::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+        }
+
+        .project-panel:hover::before {
+            left: 100%;
+        }
+
+        .project-panel:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 0 50px rgba(255, 0, 255, 0.3);
+            transform: translateX(10px);
+        }
+
+        .project-id {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(0, 255, 255, 0.1);
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            line-height: 1;
+        }
+
+        .project-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        .project-desc {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-chip {
+            padding: 8px 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+            transition: all 0.3s;
+        }
+
+        .tech-chip:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Terminal */
+        .contact-terminal {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 0 60px;
+        }
+
+        .terminal-window {
+            background: rgba(10, 10, 15, 0.9);
+            border: 2px solid var(--primary);
+            clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 40px 100%, 0 calc(100% - 40px));
+            padding: 50px;
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.3);
+        }
+
+        .terminal-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-shadow: 0 0 30px var(--primary);
+        }
+
+        .terminal-text {
+            font-size: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-chip {
+            padding: 18px 40px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+            transition: all 0.3s;
+        }
+
+        .contact-chip:hover {
+            background: var(--primary);
+            color: var(--darker);
+            box-shadow: 0 0 30px var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .robot-container {
+                height: 400px;
+            }
+            
+            .hero-title {
+                font-size: 64px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hud-nav {
+                padding: 20px;
+            }
+            
+            .status-indicators {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                padding: 60px 20px;
+            }
+            
+            .stats-hud,
+            .contact-terminal {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Background Effects -->
+    <div class="hologram-bg"></div>
+    <div class="scanlines"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- HUD Navigation -->
+    <nav class="hud-nav">
+        <div class="logo-hud">RAHIL.SYS</div>
+        <div class="status-indicators">
+            <div class="status-item">
+                <div class="status-dot"></div>
+                <span>ONLINE</span>
+            </div>
+            <div class="status-item">
+                <div class="status-dot"></div>
+                <span>AVAILABLE</span>
+            </div>
+            <div class="status-item">
+                <div class="status-dot"></div>
+                <span>OPERATIONAL</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="system-label">&lt; SYSTEM_IDENTITY /&gt;</div>
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="RAHIL">RAHIL</span><br>
+                    <span class="glitch" data-text="PARIKH">PARIKH</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Control Systems Engineer | Robotics Architect | ML Developer
+                </p>
+                <p class="hero-tagline">
+                    // BUILDING AUTONOMOUS SYSTEMS FOR TOMORROW
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn-holo">VIEW SYSTEMS</a>
+                    <a href="#contact" class="btn-holo secondary">INITIATE CONTACT</a>
+                </div>
+            </div>
+
+            <!-- Holographic Robot -->
+            <div class="robot-container">
+                <div class="robot-hologram">
+                    <div class="robot-core">
+                        <div class="robot-head">
+                            <div class="robot-eye left"></div>
+                            <div class="robot-eye right"></div>
+                            <div class="circuit-line circuit-v"></div>
+                        </div>
+                        <div class="robot-body">
+                            <div class="energy-core"></div>
+                            <div class="circuit-line circuit-h"></div>
+                        </div>
+                        <div class="data-stream">01010011</div>
+                        <div class="data-stream">11010101</div>
+                        <div class="data-stream">10110011</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats HUD -->
+    <section class="stats-hud">
+        <h2 class="section-title">PERFORMANCE METRICS</h2>
+        <div class="stats-grid">
+            <div class="stat-panel">
+                <div class="stat-value">70%</div>
+                <div class="stat-label">Latency Reduced</div>
+            </div>
+            <div class="stat-panel">
+                <div class="stat-value">90%</div>
+                <div class="stat-label">ML Accuracy</div>
+            </div>
+            <div class="stat-panel">
+                <div class="stat-value">100K+</div>
+                <div class="stat-label">Data Points/Sec</div>
+            </div>
+            <div class="stat-panel">
+                <div class="stat-value">3.8</div>
+                <div class="stat-label">GPA @ WPI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">DEPLOYED SYSTEMS</h2>
+        <div class="projects-grid">
+            <div class="project-panel">
+                <div class="project-id">01</div>
+                <h3 class="project-title">HUMANOID LOCOMOTION</h3>
+                <p class="project-desc">
+                    Led multidisciplinary team developing inverse kinematics control systems 
+                    enabling dynamic bipedal balance and human-like gait. Secured prototype 
+                    funding through technical presentations to advisory board.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-chip">PYTHON</span>
+                    <span class="tech-chip">C++</span>
+                    <span class="tech-chip">ROS</span>
+                    <span class="tech-chip">GAZEBO</span>
+                    <span class="tech-chip">KINEMATICS</span>
+                </div>
+            </div>
+
+            <div class="project-panel">
+                <div class="project-id">02</div>
+                <h3 class="project-title">PREDICTIVE ML ENGINE</h3>
+                <p class="project-desc">
+                    End-to-end pipeline achieving 90% directional accuracy for market forecasting 
+                    using LSTM networks. Deployed via Docker containers with real-time REST API 
+                    inference capabilities.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-chip">TENSORFLOW</span>
+                    <span class="tech-chip">LSTM</span>
+                    <span class="tech-chip">DOCKER</span>
+                    <span class="tech-chip">REST API</span>
+                    <span class="tech-chip">PYTHON</span>
+                </div>
+            </div>
+
+            <div class="project-panel">
+                <div class="project-id">03</div>
+                <h3 class="project-title">AUTONOMOUS NAV SYSTEM</h3>
+                <p class="project-desc">
+                    SLAM implementation with 2D LiDAR achieving 95% navigation success in complex 
+                    environments. Integrated A* pathfinding with AMCL localization for precision 
+                    indoor mapping.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-chip">ROS</span>
+                    <span class="tech-chip">LIDAR</span>
+                    <span class="tech-chip">SLAM</span>
+                    <span class="tech-chip">C++</span>
+                    <span class="tech-chip">GMAPPING</span>
+                </div>
+            </div>
+
+            <div class="project-panel">
+                <div class="project-id">04</div>
+                <h3 class="project-title">CONTROL SYSTEMS CORE</h3>
+                <p class="project-desc">
+                    Multithreaded control software for scientific instrumentation at Bridge12. 
+                    Optimized network latency 70% via ZeroMQ. Processing 100K+ data points 
+                    in &lt;75ms with custom high-speed algorithms.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-chip">QT</span>
+                    <span class="tech-chip">C++</span>
+                    <span class="tech-chip">ZEROMQ</span>
+                    <span class="tech-chip">PYTHON</span>
+                    <span class="tech-chip">REAL-TIME</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Terminal -->
+    <section class="contact-terminal" id="contact">
+        <div class="terminal-window">
+            <h2 class="terminal-header">INITIATE CONNECTION</h2>
+            <p class="terminal-text">
+                READY TO COLLABORATE ON NEXT-GENERATION ROBOTICS & AI SYSTEMS
+            </p>
+            <div class="contact-links">
+                <a href="mailto:parikhrahil7@gmail.com" class="contact-chip">EMAIL_PROTOCOL</a>
+                <a href="https://linkedin.com/in/rahilp7" class="contact-chip" target="_blank">LINKEDIN_NET</a>
+                <a href="https://github.com/rahilparikh" class="contact-chip" target="_blank">GITHUB_REPO</a>
+                <a href="#" class="contact-chip">RESUME_FILE</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Particle System
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Interactive hover effects
+        document.querySelectorAll('.stat-panel, .project-panel').forEach(panel => {
+            panel.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            panel.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+    </script>
+</body>
+</html>
