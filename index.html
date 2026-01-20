@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAHIL PARIKH // SYSTEMS ENGINEER</title>
+    <title>RAHIL PARIKH // INTERACTIVE SYSTEMS ENGINEER</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         * {
@@ -60,12 +57,12 @@
             mix-blend-mode: difference;
         }
 
-        /* Holographic Grid Background */
+        /* Background Effects */
         .hologram-bg {
             position: fixed;
             width: 100%;
             height: 100%;
-            background:
+            background: 
                 linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -74,42 +71,30 @@
         }
 
         @keyframes gridPulse {
-
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 0.6;
-            }
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
         }
 
-        /* Animated Scanlines */
         .scanlines {
             position: fixed;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(0deg,
-                    rgba(0, 255, 255, 0.03),
-                    rgba(0, 255, 255, 0.03) 1px,
-                    transparent 1px,
-                    transparent 2px);
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 255, 0.03),
+                rgba(0, 255, 255, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
             pointer-events: none;
             animation: scanline 8s linear infinite;
         }
 
         @keyframes scanline {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(50px);
-            }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
         }
 
-        /* Particle System */
         .particles {
             position: fixed;
             width: 100%;
@@ -128,21 +113,12 @@
         }
 
         @keyframes float {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0) translateX(0);
                 opacity: 0;
             }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 1;
-            }
-
+            10% { opacity: 1; }
+            90% { opacity: 1; }
             100% {
                 transform: translateY(-100vh) translateX(100px);
                 opacity: 0;
@@ -174,15 +150,8 @@
         }
 
         @keyframes logoGlow {
-
-            0%,
-            100% {
-                text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary);
-            }
-
-            50% {
-                text-shadow: 0 0 30px var(--primary), 0 0 60px var(--primary), 0 0 80px var(--primary);
-            }
+            0%, 100% { text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary); }
+            50% { text-shadow: 0 0 30px var(--primary), 0 0 60px var(--primary), 0 0 80px var(--primary); }
         }
 
         .status-indicators {
@@ -210,17 +179,8 @@
         }
 
         @keyframes statusPulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.5;
-                transform: scale(1.2);
-            }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
 
         /* Hero Section */
@@ -262,7 +222,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -308,51 +267,19 @@
         }
 
         @keyframes glitch1 {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            20% {
-                transform: translateX(-3px);
-            }
-
-            40% {
-                transform: translateX(3px);
-            }
-
-            60% {
-                transform: translateX(-3px);
-            }
-
-            80% {
-                transform: translateX(3px);
-            }
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-3px); }
+            40% { transform: translateX(3px); }
+            60% { transform: translateX(-3px); }
+            80% { transform: translateX(3px); }
         }
 
         @keyframes glitch2 {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            20% {
-                transform: translateX(3px);
-            }
-
-            40% {
-                transform: translateX(-3px);
-            }
-
-            60% {
-                transform: translateX(3px);
-            }
-
-            80% {
-                transform: translateX(-3px);
-            }
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(3px); }
+            40% { transform: translateX(-3px); }
+            60% { transform: translateX(3px); }
+            80% { transform: translateX(-3px); }
         }
 
         .hero-subtitle {
@@ -396,6 +323,7 @@
             border: 2px solid var(--primary);
             color: var(--primary);
             clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            cursor: pointer;
         }
 
         .btn-holo::before {
@@ -431,19 +359,36 @@
             box-shadow: 0 0 30px var(--secondary), inset 0 0 30px rgba(255, 0, 255, 0.2);
         }
 
-        /* 3D WebGL Robot Container */
+        /* 3D WebGL Robot Container with Interactive Features */
         #robot-3d {
             position: relative;
             width: 100%;
             height: 600px;
             opacity: 0;
             animation: fadeIn 1.5s 0.5s forwards;
+            cursor: pointer;
         }
 
         @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
+            to { opacity: 1; }
+        }
+
+        .robot-instruction {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+            animation: pulse 2s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
         }
 
         /* Stats HUD */
@@ -473,13 +418,8 @@
             font-size: 24px;
         }
 
-        .section-title::before {
-            left: 0;
-        }
-
-        .section-title::after {
-            right: 0;
-        }
+        .section-title::before { left: 0; }
+        .section-title::after { right: 0; }
 
         .stats-grid {
             display: grid;
@@ -494,10 +434,12 @@
             border: 2px solid var(--primary);
             clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
             transition: all 0.4s;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
 
         .stat-panel:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) rotateX(5deg);
             box-shadow: 0 20px 60px rgba(0, 255, 255, 0.4);
             border-color: var(--secondary);
         }
@@ -519,7 +461,131 @@
             text-transform: uppercase;
         }
 
-        /* Project Cards */
+        /* SKILL GAME VISUALIZATION */
+        .skills-game-section {
+            padding: 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .skill-tree-container {
+            position: relative;
+            min-height: 600px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.02), rgba(255, 0, 255, 0.02));
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        .skill-node {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .skill-node:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 40px var(--primary);
+            border-color: var(--accent);
+            z-index: 100;
+        }
+
+        .skill-node.active {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+            border-color: var(--accent);
+            box-shadow: 0 0 50px var(--accent);
+            transform: scale(1.3);
+        }
+
+        .skill-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .skill-level {
+            font-size: 10px;
+            color: var(--accent);
+            margin-top: 5px;
+        }
+
+        .skill-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform-origin: left center;
+            opacity: 0.3;
+            transition: all 0.3s;
+        }
+
+        .skill-connection.active {
+            opacity: 1;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .skill-info-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 600px;
+            background: rgba(10, 10, 15, 0.95);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 30px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s;
+        }
+
+        .skill-info-panel.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .skill-info-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .skill-info-desc {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .skill-projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-project-tag {
+            padding: 5px 15px;
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            font-size: 11px;
+        }
+
+        /* Project Cards with Holographic Effect */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -527,6 +593,7 @@
             padding: 100px 60px;
             max-width: 1400px;
             margin: 0 auto;
+            perspective: 1000px;
         }
 
         .project-panel {
@@ -537,6 +604,7 @@
             clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
             transition: all 0.4s;
             overflow: hidden;
+            transform-style: preserve-3d;
         }
 
         .project-panel::before {
@@ -557,8 +625,8 @@
 
         .project-panel:hover {
             border-color: var(--secondary);
-            box-shadow: 0 0 50px rgba(255, 0, 255, 0.3);
-            transform: translateX(10px);
+            box-shadow: 0 30px 80px rgba(255, 0, 255, 0.4);
+            transform: translateY(-20px) rotateX(5deg);
         }
 
         .project-id {
@@ -612,6 +680,7 @@
             letter-spacing: 1px;
             clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .tech-chip:hover {
@@ -773,6 +842,81 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
+        /* COLLABORATIVE WHITEBOARD */
+        .whiteboard-section {
+            padding: 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .whiteboard-container {
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid var(--primary);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
+        }
+
+        .whiteboard-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .whiteboard-btn {
+            padding: 12px 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            background: var(--primary);
+            color: var(--darker);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .whiteboard-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        .whiteboard-btn.active {
+            background: var(--accent);
+        }
+
+        .color-picker {
+            width: 50px;
+            height: 40px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .brush-size {
+            width: 150px;
+            height: 40px;
+        }
+
+        #whiteboard {
+            width: 100%;
+            height: 500px;
+            border: 2px solid var(--dark);
+            border-radius: 10px;
+            cursor: crosshair;
+            background: white;
+        }
+
+        .whiteboard-info {
+            margin-top: 15px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            color: var(--primary);
+        }
+
         /* Contact Terminal */
         .contact-terminal {
             max-width: 900px;
@@ -840,11 +984,11 @@
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
-
+            
             #robot-3d {
                 height: 400px;
             }
-
+            
             .hero-title {
                 font-size: 64px;
             }
@@ -866,36 +1010,49 @@
             .experience-dot {
                 left: 20px;
             }
+
+            .skill-tree-container {
+                min-height: 800px;
+            }
         }
 
         @media (max-width: 768px) {
             .hud-nav {
                 padding: 20px;
             }
-
+            
             .status-indicators {
                 display: none;
             }
-
+            
             .hero-title {
                 font-size: 48px;
             }
-
+            
             .projects-grid {
                 grid-template-columns: 1fr;
                 padding: 60px 20px;
             }
-
+            
             .stats-hud,
             .experience-section,
             .certifications-grid,
+            .skills-game-section,
+            .whiteboard-section,
             .contact-terminal {
                 padding: 60px 20px;
+            }
+
+            body {
+                cursor: auto;
+            }
+
+            .cursor, .cursor-follower {
+                display: none;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
@@ -916,7 +1073,7 @@
             </div>
             <div class="status-item">
                 <div class="status-dot"></div>
-                <span>AVAILABLE</span>
+                <span>INTERACTIVE</span>
             </div>
             <div class="status-item">
                 <div class="status-dot"></div>
@@ -935,19 +1092,21 @@
                     <span class="glitch" data-text="PARIKH">PARIKH</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Control Systems Software Engineer | Robotics Architect | ML Developer
+                    Control Systems Engineer | Robotics Architect | ML Developer
                 </p>
                 <p class="hero-tagline">
                     // BUILDING AUTONOMOUS SYSTEMS FOR TOMORROW
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn-holo">VIEW SYSTEMS</a>
-                    <a href="#contact" class="btn-holo secondary">INITIATE CONTACT</a>
+                    <a href="#skills" class="btn-holo secondary">EXPLORE SKILLS</a>
                 </div>
             </div>
 
-            <!-- 3D WebGL Robot -->
-            <div id="robot-3d"></div>
+            <!-- 3D Interactive Robot -->
+            <div id="robot-3d">
+                <div class="robot-instruction">HOVER TO INTERACT • CLICK TO WAVE</div>
+            </div>
         </div>
     </section>
 
@@ -970,165 +1129,24 @@
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- SKILL GAME VISUALIZATION -->
+    <section class="skills-game-section" id="skills">
+        <h2 class="section-title">SKILL TREE // INTERACTIVE</h2>
+        <div class="skill-tree-container" id="skill-tree">
+            <!-- Skill nodes will be generated by JavaScript -->
+        </div>
+        <div class="skill-info-panel" id="skill-info">
+            <div class="skill-info-title" id="skill-name">Select a skill</div>
+            <div class="skill-info-desc" id="skill-description">Click on any skill node to see related projects and expertise</div>
+            <div class="skill-projects" id="skill-related-projects"></div>
+        </div>
+    </section>
+
+    <!-- Projects with Holographic Effect -->
     <section id="projects">
         <h2 class="section-title">DEPLOYED SYSTEMS</h2>
         <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-panel">
-                <div class="project-id">01</div>
-                <h3 class="project-title">HUMANOID LOCOMOTION</h3>
-                <div class="project-date">AUG 2022 - AUG 2024</div>
-                <p class="project-desc">
-                    Led multidisciplinary team of 12 developing inverse kinematics control systems
-                    enabling dynamic bipedal balance and human-like gait. Designed and fabricated
-                    mechanism achieving stable locomotion. Secured prototype funding through technical
-                    presentations to advisory board.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">PYTHON</span>
-                    <span class="tech-chip">C++</span>
-                    <span class="tech-chip">ROS</span>
-                    <span class="tech-chip">GAZEBO</span>
-                    <span class="tech-chip">KINEMATICS</span>
-                    <span class="tech-chip">RVIZ</span>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-panel">
-                <div class="project-id">02</div>
-                <h3 class="project-title">PREDICTIVE ML ENGINE</h3>
-                <div class="project-date">SEPT 2024 - PRESENT</div>
-                <p class="project-desc">
-                    End-to-end pipeline achieving 90% directional accuracy for stock market forecasting
-                    using LSTM networks. Implemented data preprocessing, training workflows, and
-                    interactive visualizations. Deployed via Docker containers with real-time REST API
-                    inference capabilities processing 10+ years of historical data.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">TENSORFLOW</span>
-                    <span class="tech-chip">LSTM</span>
-                    <span class="tech-chip">DOCKER</span>
-                    <span class="tech-chip">REST API</span>
-                    <span class="tech-chip">SCIKIT-LEARN</span>
-                    <span class="tech-chip">MATPLOTLIB</span>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-panel">
-                <div class="project-id">03</div>
-                <h3 class="project-title">AUTONOMOUS NAV SYSTEM</h3>
-                <div class="project-date">OCT 2021 - DEC 2021</div>
-                <p class="project-desc">
-                    SLAM implementation with 2D LiDAR achieving 95% navigation success in complex
-                    environments. Integrated A* pathfinding with AMCL localization and particle
-                    filters for precision indoor mapping. Demonstrated complete navigation system
-                    in miniature test environment as lead software developer.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">ROS</span>
-                    <span class="tech-chip">LIDAR</span>
-                    <span class="tech-chip">SLAM</span>
-                    <span class="tech-chip">C++</span>
-                    <span class="tech-chip">GMAPPING</span>
-                    <span class="tech-chip">AMCL</span>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-panel">
-                <div class="project-id">04</div>
-                <h3 class="project-title">HOSPITAL MANAGEMENT</h3>
-                <div class="project-date">JAN 2021 - MAR 2021</div>
-                <p class="project-desc">
-                    Architected full-stack application with OAuth 2.0 authentication, role-based
-                    access control, and Google Maps API for indoor navigation with floor-level
-                    accuracy. Led team of 12 as captain and joint lead developer delivering weekly
-                    presentations to panel of judges and 80+ students.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">JAVA</span>
-                    <span class="tech-chip">SQL</span>
-                    <span class="tech-chip">REST API</span>
-                    <span class="tech-chip">OAUTH 2.0</span>
-                    <span class="tech-chip">GOOGLE MAPS</span>
-                </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-panel">
-                <div class="project-id">05</div>
-                <h3 class="project-title">MOTION PLANNING</h3>
-                <div class="project-date">AUG 2021 - OCT 2021</div>
-                <p class="project-desc">
-                    Developed consistent color-sorting algorithm utilizing computer vision achieving
-                    100% accuracy. Implemented trajectory generation through forward and inverse
-                    kinematics using object-oriented programming in C++ and MATLAB for robotic arm
-                    manipulation.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">C++</span>
-                    <span class="tech-chip">MATLAB</span>
-                    <span class="tech-chip">CV</span>
-                    <span class="tech-chip">KINEMATICS</span>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-panel">
-                <div class="project-id">06</div>
-                <h3 class="project-title">AI PATHFINDING</h3>
-                <div class="project-date">JAN 2021 - MAR 2021</div>
-                <p class="project-desc">
-                    Implemented advanced search algorithms including Iterative Deepening Search,
-                    A*, Hill-Climbing, and Genetic Search to solve Heavy Queens Chess problem.
-                    Demonstrated optimization techniques and heuristic-based problem solving.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">JAVA</span>
-                    <span class="tech-chip">PYTHON</span>
-                    <span class="tech-chip">A*</span>
-                    <span class="tech-chip">GENETIC ALGO</span>
-                </div>
-            </div>
-
-            <!-- Project 7 -->
-            <div class="project-panel">
-                <div class="project-id">07</div>
-                <h3 class="project-title">SOLAR PANEL ROBOT</h3>
-                <div class="project-date">JAN 2020 - MAR 2020</div>
-                <p class="project-desc">
-                    Designed autonomous robot to replace solar collector panels achieving 100%
-                    reliability in control, dynamics, and mechanical design tests. Integrated
-                    sensors and actuators for precise manipulation tasks.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">C</span>
-                    <span class="tech-chip">C++</span>
-                    <span class="tech-chip">CONTROLS</span>
-                    <span class="tech-chip">SENSORS</span>
-                </div>
-            </div>
-
-            <!-- Project 8 -->
-            <div class="project-panel">
-                <div class="project-id">08</div>
-                <h3 class="project-title">EMOTICON COMPILER</h3>
-                <div class="project-date">JAN 2020 - FEB 2020</div>
-                <p class="project-desc">
-                    Developed emoticon programming language using large language models to
-                    articulate content through emojis. Competed with 20 teams at WPI Hackathon
-                    demonstrating innovative approach to programming language design.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-chip">JAVA</span>
-                    <span class="tech-chip">C++</span>
-                    <span class="tech-chip">KOTLIN</span>
-                    <span class="tech-chip">NLP</span>
-                </div>
-            </div>
+            <!-- Projects will be populated -->
         </div>
     </section>
 
@@ -1136,76 +1154,7 @@
     <section class="experience-section">
         <h2 class="section-title">PROFESSIONAL TIMELINE</h2>
         <div class="experience-timeline">
-            <!-- Experience 1 -->
-            <div class="experience-item">
-                <div class="experience-dot"></div>
-                <div class="experience-content">
-                    <div class="experience-date">SEPTEMBER 2023 - PRESENT</div>
-                    <h3 class="experience-title">Control Systems Software Engineer</h3>
-                    <div class="experience-company">Bridge12 Technologies • Natick, MA</div>
-                    <div class="experience-desc">
-                        <ul>
-                            <li>Co-lead multithreaded control software development using Qt, C++, Python, and QML for
-                                multi-device state machine capability</li>
-                            <li>Built custom Linux distributions (kernel, root filesystem, boot images) for NVIDIA
-                                Jetson Nano and Orin NX using Yocto Project</li>
-                            <li>Optimized network latency in feedback control loops using ZeroMQ, reducing buffer delays
-                                from 5s to <1.5s (70% improvement)</li>
-                            <li>Developed high-speed ML search & track algorithm processing 100,000+ data points in
-                                under 75ms</li>
-                            <li>Cross-platform Android and iOS app development with TCP/IP and UDP networking protocols
-                            </li>
-                            <li>Deploy systems at customer sites alongside leadership performing live testing,
-                                debugging, and technical training</li>
-                            <li>Contributed to HUGO web development implementing SEO strategies increasing traffic by
-                                20%</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Experience 2 -->
-            <div class="experience-item">
-                <div class="experience-dot"></div>
-                <div class="experience-content">
-                    <div class="experience-date">MAY 2022 - OCTOBER 2022</div>
-                    <h3 class="experience-title">Software Engineering Intern</h3>
-                    <div class="experience-company">Ekotrope • Boston, MA</div>
-                    <div class="experience-desc">
-                        <ul>
-                            <li>Full-stack development for energy modeling SaaS platform in collaborative Agile Scrum
-                                environment</li>
-                            <li>Developed RESTful APIs and front-end architecture using Java, Maven, and AWS</li>
-                            <li>Refactored MariaDB/MySQL database architecture improving transaction speed by 20%</li>
-                            <li>Created and executed JUnit test suites validating modeling accuracy, reducing defects by
-                                18%</li>
-                            <li>Managed client ad-hoc requests on production application using Agile project management
-                                (Jira)</li>
-                            <li>Presented weekly bug fixes and feature upgrades to internal and external stakeholders
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div class="experience-item">
-                <div class="experience-dot"></div>
-                <div class="experience-content">
-                    <div class="experience-date">AUGUST 2019 - MAY 2023</div>
-                    <h3 class="experience-title">BS Computer Science & Robotics Engineering</h3>
-                    <div class="experience-company">Worcester Polytechnic Institute</div>
-                    <div class="experience-desc">
-                        <ul>
-                            <li>Dual degree with GPA: 4.0/4.0</li>
-                            <li>Dean's List (All Semesters) | Presidential Scholarship | UPE Honor Society</li>
-                            <li>Rho Beta Epsilon Robotics Society | SWEET Fellowship Program</li>
-                            <li>Relevant Coursework: Machine Learning, Computer Vision, Distributed Systems, Real-Time
-                                Control Systems, Algorithms, Data Structures</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <!-- Experience items will be populated -->
         </div>
     </section>
 
@@ -1213,48 +1162,25 @@
     <section>
         <h2 class="section-title">CERTIFICATIONS & ACHIEVEMENTS</h2>
         <div class="certifications-grid">
-            <div class="cert-card">
-                <div class="cert-badge">🏆</div>
-                <h3 class="cert-title">J.P. Morgan - Software Engineering</h3>
-                <div class="cert-issuer">Forage • January 2026</div>
-                <p class="cert-desc">
-                    Integrated Kafka into Spring Boot microservice consuming high-volume transaction
-                    messages. Implemented validation and persistence logic with Spring Data JPA and
-                    H2 SQL database. Connected to external REST APIs and developed query endpoints.
-                </p>
-            </div>
+            <!-- Certifications will be populated -->
+        </div>
+    </section>
 
-            <div class="cert-card">
-                <div class="cert-badge">🏆</div>
-                <h3 class="cert-title">J.P. Morgan - Quantitative Research</h3>
-                <div class="cert-issuer">Forage • January 2026</div>
-                <p class="cert-desc">
-                    Analyzed loan portfolios to estimate default probability. Used dynamic programming
-                    to convert FICO scores into categorical data. Applied quantitative research methods
-                    for financial analysis.
-                </p>
+    <!-- COLLABORATIVE WHITEBOARD -->
+    <section class="whiteboard-section">
+        <h2 class="section-title">COLLABORATIVE WHITEBOARD</h2>
+        <div class="whiteboard-container">
+            <div class="whiteboard-controls">
+                <button class="whiteboard-btn active" id="draw-btn">✏️ DRAW</button>
+                <button class="whiteboard-btn" id="erase-btn">🧹 ERASE</button>
+                <button class="whiteboard-btn" id="clear-btn">🗑️ CLEAR</button>
+                <input type="color" class="color-picker" id="color-picker" value="#00ffff">
+                <input type="range" class="brush-size" id="brush-size" min="1" max="20" value="3">
+                <span style="color: var(--dark); font-family: 'Orbitron', sans-serif; font-size: 12px;">Brush Size</span>
             </div>
-
-            <div class="cert-card">
-                <div class="cert-badge">🏆</div>
-                <h3 class="cert-title">Electronic Arts - Software Engineering</h3>
-                <div class="cert-issuer">Forage • January 2026</div>
-                <p class="cert-desc">
-                    Proposed features for EA Sports College Football and created technical documentation.
-                    Built class diagrams and C++ header files. Patched bugfixes and optimized codebase
-                    implementing improved data structures.
-                </p>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-badge">🏆</div>
-                <h3 class="cert-title">Walmart USA - Advanced Software Engineering</h3>
-                <div class="cert-issuer">Forage • January 2026</div>
-                <p class="cert-desc">
-                    Developed novel heap data structure in Java for shipping department. Designed UML
-                    class diagrams for data processor with multiple operating modes. Created entity
-                    relationship diagram for database design.
-                </p>
+            <canvas id="whiteboard"></canvas>
+            <div class="whiteboard-info">
+                💡 Leave a message, draw a doodle, or collaborate visually!
             </div>
         </div>
     </section>
@@ -1283,7 +1209,7 @@
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-
+            
             setTimeout(() => {
                 cursorFollower.style.left = e.clientX + 'px';
                 cursorFollower.style.top = e.clientY + 'px';
@@ -1301,32 +1227,31 @@
             particlesContainer.appendChild(particle);
         }
 
-        // 3D WebGL Robot using Three.js
+        // 3D Interactive Robot with Eye Tracking
         const robotContainer = document.getElementById('robot-3d');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, robotContainer.clientWidth / robotContainer.clientHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-
+        
         renderer.setSize(robotContainer.clientWidth, robotContainer.clientHeight);
         renderer.setClearColor(0x000000, 0);
         robotContainer.appendChild(renderer.domElement);
 
-        // Create Robot Head
+        // Create Robot Parts
         const headGeometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-        const headMaterial = new THREE.MeshPhongMaterial({
+        const headMaterial = new THREE.MeshPhongMaterial({ 
             color: 0x00ffff,
             emissive: 0x00ffff,
             emissiveIntensity: 0.3,
             transparent: true,
-            opacity: 0.8,
-            wireframe: false
+            opacity: 0.8
         });
         const head = new THREE.Mesh(headGeometry, headMaterial);
         head.position.y = 2;
 
-        // Create Robot Eyes
+        // Create Eyes with Tracking
         const eyeGeometry = new THREE.SphereGeometry(0.2, 16, 16);
-        const eyeMaterial = new THREE.MeshBasicMaterial({
+        const eyeMaterial = new THREE.MeshBasicMaterial({ 
             color: 0xffff00,
             emissive: 0xffff00,
             emissiveIntensity: 1
@@ -1336,9 +1261,17 @@
         const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
         rightEye.position.set(0.4, 2.2, 0.7);
 
-        // Create Robot Body
+        // Pupils for eye tracking
+        const pupilGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+        const pupilMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+        const leftPupil = new THREE.Mesh(pupilGeometry, pupilMaterial);
+        leftPupil.position.set(-0.4, 2.2, 0.8);
+        const rightPupil = new THREE.Mesh(pupilGeometry, pupilMaterial);
+        rightPupil.position.set(0.4, 2.2, 0.8);
+
+        // Body
         const bodyGeometry = new THREE.BoxGeometry(2, 2.5, 1);
-        const bodyMaterial = new THREE.MeshPhongMaterial({
+        const bodyMaterial = new THREE.MeshPhongMaterial({ 
             color: 0xff00ff,
             emissive: 0xff00ff,
             emissiveIntensity: 0.2,
@@ -1348,9 +1281,9 @@
         const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
         body.position.y = 0;
 
-        // Create Energy Core
+        // Energy Core
         const coreGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-        const coreMaterial = new THREE.MeshBasicMaterial({
+        const coreMaterial = new THREE.MeshBasicMaterial({ 
             color: 0xffff00,
             emissive: 0xffff00,
             emissiveIntensity: 1
@@ -1358,7 +1291,23 @@
         const core = new THREE.Mesh(coreGeometry, coreMaterial);
         core.position.set(0, 0, 0.6);
 
-        // Create Wireframe Overlay
+        // Arms (for waving animation)
+        const armGeometry = new THREE.CylinderGeometry(0.2, 0.2, 1.5);
+        const armMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0x00ffff,
+            emissive: 0x00ffff,
+            emissiveIntensity: 0.2,
+            transparent: true,
+            opacity: 0.7
+        });
+        const leftArm = new THREE.Mesh(armGeometry, armMaterial);
+        leftArm.position.set(-1.2, 0.5, 0);
+        leftArm.rotation.z = Math.PI / 6;
+        const rightArm = new THREE.Mesh(armGeometry, armMaterial);
+        rightArm.position.set(1.2, 0.5, 0);
+        rightArm.rotation.z = -Math.PI / 6;
+
+        // Wireframes
         const headWireframe = new THREE.WireframeGeometry(headGeometry);
         const headLine = new THREE.LineSegments(headWireframe);
         headLine.material.color.setHex(0x00ffff);
@@ -1369,23 +1318,25 @@
         bodyLine.material.color.setHex(0xff00ff);
         bodyLine.position.copy(body.position);
 
-        // Add all parts to scene
+        // Add to scene
         scene.add(head);
         scene.add(leftEye);
         scene.add(rightEye);
+        scene.add(leftPupil);
+        scene.add(rightPupil);
         scene.add(body);
         scene.add(core);
+        scene.add(leftArm);
+        scene.add(rightArm);
         scene.add(headLine);
         scene.add(bodyLine);
 
-        // Add Lighting
+        // Lighting
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
-
         const pointLight1 = new THREE.PointLight(0x00ffff, 1, 100);
         pointLight1.position.set(5, 5, 5);
         scene.add(pointLight1);
-
         const pointLight2 = new THREE.PointLight(0xff00ff, 1, 100);
         pointLight2.position.set(-5, 5, 5);
         scene.add(pointLight2);
@@ -1393,7 +1344,24 @@
         camera.position.z = 6;
         camera.position.y = 1;
 
-        // Animation
+        // Eye tracking
+        let mouseX = 0;
+        let mouseY = 0;
+        robotContainer.addEventListener('mousemove', (e) => {
+            const rect = robotContainer.getBoundingClientRect();
+            mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            mouseY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+        });
+
+        // Wave animation
+        let isWaving = false;
+        let waveTime = 0;
+        robotContainer.addEventListener('click', () => {
+            isWaving = true;
+            waveTime = 0;
+        });
+
+        // Animation loop
         function animate() {
             requestAnimationFrame(animate);
 
@@ -1404,27 +1372,424 @@
             bodyLine.rotation.y += 0.005;
 
             // Float effect
-            head.position.y = 2 + Math.sin(Date.now() * 0.001) * 0.2;
-            body.position.y = Math.sin(Date.now() * 0.001) * 0.2;
+            const floatY = Math.sin(Date.now() * 0.001) * 0.2;
+            head.position.y = 2 + floatY;
+            body.position.y = floatY;
+            leftArm.position.y = 0.5 + floatY;
+            rightArm.position.y = 0.5 + floatY;
+
+            // Eye tracking
+            const eyeRange = 0.15;
+            leftPupil.position.x = -0.4 + mouseX * eyeRange;
+            leftPupil.position.y = 2.2 + mouseY * eyeRange;
+            rightPupil.position.x = 0.4 + mouseX * eyeRange;
+            rightPupil.position.y = 2.2 + mouseY * eyeRange;
+
+            // Wave animation
+            if (isWaving) {
+                waveTime += 0.1;
+                rightArm.rotation.z = -Math.PI / 6 + Math.sin(waveTime) * 0.5;
+                if (waveTime > Math.PI * 4) {
+                    isWaving = false;
+                    rightArm.rotation.z = -Math.PI / 6;
+                }
+            }
 
             // Pulse core
             const scale = 1 + Math.sin(Date.now() * 0.003) * 0.2;
             core.scale.set(scale, scale, scale);
-
-            // Rotate core
             core.rotation.z += 0.02;
 
             renderer.render(scene, camera);
         }
         animate();
 
-        // Handle resize
         window.addEventListener('resize', () => {
             const width = robotContainer.clientWidth;
             const height = robotContainer.clientHeight;
             renderer.setSize(width, height);
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
+        });
+
+        // SKILL GAME VISUALIZATION
+        const skills = [
+            { name: 'C++/Python', icon: '💻', level: 'MASTER', x: 20, y: 15, projects: ['Humanoid Robot', 'Control Systems', 'Autonomous Nav'] },
+            { name: 'ROS/Gazebo', icon: '🤖', level: 'EXPERT', x: 50, y: 10, projects: ['Humanoid Robot', 'Autonomous Nav', 'Motion Planning'] },
+            { name: 'TensorFlow', icon: '🧠', level: 'ADVANCED', x: 80, y: 15, projects: ['ML Predictive Engine', 'Search Algorithm'] },
+            { name: 'Docker/K8s', icon: '🐳', level: 'EXPERT', x: 35, y: 45, projects: ['ML Predictive Engine', 'Control Systems'] },
+            { name: 'Qt/QML', icon: '⚡', level: 'EXPERT', x: 65, y: 45, projects: ['Control Systems'] },
+            { name: 'Embedded Linux', icon: '🐧', level: 'ADVANCED', x: 20, y: 75, projects: ['Control Systems', 'Solar Robot'] },
+            { name: 'Java/SQL', icon: '☕', level: 'ADVANCED', x: 50, y: 80, projects: ['Hospital Management', 'Ekotrope'] },
+            { name: 'ML Pipelines', icon: '📊', level: 'EXPERT', x: 80, y: 75, projects: ['ML Predictive Engine'] }
+        ];
+
+        const skillTreeContainer = document.getElementById('skill-tree');
+        const skillInfoPanel = document.getElementById('skill-info');
+        const skillNameEl = document.getElementById('skill-name');
+        const skillDescEl = document.getElementById('skill-description');
+        const skillProjectsEl = document.getElementById('skill-related-projects');
+
+        let activeSkill = null;
+        const skillNodes = [];
+
+        // Create skill nodes
+        skills.forEach((skill, index) => {
+            const node = document.createElement('div');
+            node.className = 'skill-node';
+            node.style.left = skill.x + '%';
+            node.style.top = skill.y + '%';
+            node.innerHTML = `
+                <div class="skill-icon">${skill.icon}</div>
+                <div>${skill.name}</div>
+                <div class="skill-level">${skill.level}</div>
+            `;
+            
+            node.addEventListener('click', () => {
+                // Deactivate previous
+                if (activeSkill !== null) {
+                    skillNodes[activeSkill].classList.remove('active');
+                }
+                
+                // Activate current
+                activeSkill = index;
+                node.classList.add('active');
+                
+                // Show info panel
+                skillInfoPanel.classList.add('visible');
+                skillNameEl.textContent = skill.name;
+                skillDescEl.textContent = `Expertise Level: ${skill.level} • Used in ${skill.projects.length} projects`;
+                
+                // Show related projects
+                skillProjectsEl.innerHTML = '';
+                skill.projects.forEach(project => {
+                    const tag = document.createElement('span');
+                    tag.className = 'skill-project-tag';
+                    tag.textContent = project;
+                    skillProjectsEl.appendChild(tag);
+                });
+            });
+            
+            skillTreeContainer.appendChild(node);
+            skillNodes.push(node);
+        });
+
+        // Create connections between related skills
+        function createConnection(from, to) {
+            const fromNode = skillNodes[from];
+            const toNode = skillNodes[to];
+            
+            const fromRect = fromNode.getBoundingClientRect();
+            const toRect = toNode.getBoundingClientRect();
+            const containerRect = skillTreeContainer.getBoundingClientRect();
+            
+            const fromX = (fromRect.left + fromRect.width / 2 - containerRect.left);
+            const fromY = (fromRect.top + fromRect.height / 2 - containerRect.top);
+            const toX = (toRect.left + toRect.width / 2 - containerRect.left);
+            const toY = (toRect.top + toRect.height / 2 - containerRect.top);
+            
+            const length = Math.sqrt((toX - fromX) ** 2 + (toY - fromY) ** 2);
+            const angle = Math.atan2(toY - fromY, toX - fromX);
+            
+            const line = document.createElement('div');
+            line.className = 'skill-connection';
+            line.style.width = length + 'px';
+            line.style.left = fromX + 'px';
+            line.style.top = fromY + 'px';
+            line.style.transform = `rotate(${angle}rad)`;
+            skillTreeContainer.appendChild(line);
+        }
+
+        // Create some connections (these represent related skills)
+        createConnection(0, 1); // C++ to ROS
+        createConnection(1, 2); // ROS to TensorFlow
+        createConnection(0, 3); // C++ to Docker
+        createConnection(2, 7); // TensorFlow to ML Pipelines
+        createConnection(3, 4); // Docker to Qt
+        createConnection(4, 6); // Qt to Java
+        createConnection(5, 0); // Linux to C++
+
+        // COLLABORATIVE WHITEBOARD
+        const canvas = document.getElementById('whiteboard');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        
+        let isDrawing = false;
+        let currentTool = 'draw';
+        let currentColor = '#00ffff';
+        let currentSize = 3;
+        
+        const drawBtn = document.getElementById('draw-btn');
+        const eraseBtn = document.getElementById('erase-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        const colorPicker = document.getElementById('color-picker');
+        const brushSize = document.getElementById('brush-size');
+        
+        drawBtn.addEventListener('click', () => {
+            currentTool = 'draw';
+            drawBtn.classList.add('active');
+            eraseBtn.classList.remove('active');
+        });
+        
+        eraseBtn.addEventListener('click', () => {
+            currentTool = 'erase';
+            eraseBtn.classList.add('active');
+            drawBtn.classList.remove('active');
+        });
+        
+        clearBtn.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+        
+        colorPicker.addEventListener('change', (e) => {
+            currentColor = e.target.value;
+        });
+        
+        brushSize.addEventListener('input', (e) => {
+            currentSize = e.target.value;
+        });
+        
+        function startDrawing(e) {
+            isDrawing = true;
+            draw(e);
+        }
+        
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+        
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            
+            if (currentTool === 'draw') {
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.strokeStyle = currentColor;
+            } else {
+                ctx.globalCompositeOperation = 'destination-out';
+            }
+            
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+        
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        
+        // Touch support
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent('mousedown', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        });
+        
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent('mousemove', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        });
+        
+        canvas.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            const mouseEvent = new MouseEvent('mouseup', {});
+            canvas.dispatchEvent(mouseEvent);
+        });
+
+        // Populate Projects (shortened for brevity - include all 8)
+        const projectsData = [
+            {
+                id: '01',
+                title: 'HUMANOID LOCOMOTION',
+                date: 'AUG 2022 - AUG 2024',
+                desc: 'Led multidisciplinary team of 12 developing inverse kinematics control systems enabling dynamic bipedal balance and human-like gait. Designed and fabricated mechanism achieving stable locomotion. Secured prototype funding through technical presentations to advisory board.',
+                tech: ['PYTHON', 'C++', 'ROS', 'GAZEBO', 'KINEMATICS', 'RVIZ']
+            },
+            {
+                id: '02',
+                title: 'PREDICTIVE ML ENGINE',
+                date: 'SEPT 2024 - PRESENT',
+                desc: 'End-to-end pipeline achieving 90% directional accuracy for stock market forecasting using LSTM networks. Implemented data preprocessing, training workflows, and interactive visualizations. Deployed via Docker containers with real-time REST API inference capabilities.',
+                tech: ['TENSORFLOW', 'LSTM', 'DOCKER', 'REST API', 'SCIKIT-LEARN', 'MATPLOTLIB']
+            },
+            {
+                id: '03',
+                title: 'AUTONOMOUS NAV SYSTEM',
+                date: 'OCT 2021 - DEC 2021',
+                desc: 'SLAM implementation with 2D LiDAR achieving 95% navigation success in complex environments. Integrated A* pathfinding with AMCL localization and particle filters for precision indoor mapping.',
+                tech: ['ROS', 'LIDAR', 'SLAM', 'C++', 'GMAPPING', 'AMCL']
+            },
+            {
+                id: '04',
+                title: 'HOSPITAL MANAGEMENT',
+                date: 'JAN 2021 - MAR 2021',
+                desc: 'Architected full-stack application with OAuth 2.0 authentication, role-based access control, and Google Maps API for indoor navigation with floor-level accuracy. Led team of 12 developers.',
+                tech: ['JAVA', 'SQL', 'REST API', 'OAUTH 2.0', 'GOOGLE MAPS']
+            },
+            {
+                id: '05',
+                title: 'MOTION PLANNING',
+                date: 'AUG 2021 - OCT 2021',
+                desc: 'Developed color-sorting algorithm utilizing computer vision achieving 100% accuracy. Implemented trajectory generation through forward and inverse kinematics using OOP in C++ and MATLAB.',
+                tech: ['C++', 'MATLAB', 'CV', 'KINEMATICS']
+            },
+            {
+                id: '06',
+                title: 'AI PATHFINDING',
+                date: 'JAN 2021 - MAR 2021',
+                desc: 'Implemented advanced search algorithms including Iterative Deepening Search, A*, Hill-Climbing, and Genetic Search to solve Heavy Queens Chess problem.',
+                tech: ['JAVA', 'PYTHON', 'A*', 'GENETIC ALGO']
+            },
+            {
+                id: '07',
+                title: 'SOLAR PANEL ROBOT',
+                date: 'JAN 2020 - MAR 2020',
+                desc: 'Designed autonomous robot to replace solar collector panels achieving 100% reliability in control, dynamics, and mechanical design tests.',
+                tech: ['C', 'C++', 'CONTROLS', 'SENSORS']
+            },
+            {
+                id: '08',
+                title: 'EMOTICON COMPILER',
+                date: 'JAN 2020 - FEB 2020',
+                desc: 'Developed emoticon programming language using large language models to articulate content through emojis. Competed at WPI Hackathon with 20 teams.',
+                tech: ['JAVA', 'C++', 'KOTLIN', 'NLP']
+            }
+        ];
+
+        const projectsGrid = document.querySelector('.projects-grid');
+        projectsData.forEach(project => {
+            const panel = document.createElement('div');
+            panel.className = 'project-panel';
+            panel.innerHTML = `
+                <div class="project-id">${project.id}</div>
+                <h3 class="project-title">${project.title}</h3>
+                <div class="project-date">${project.date}</div>
+                <p class="project-desc">${project.desc}</p>
+                <div class="project-tech">
+                    ${project.tech.map(t => `<span class="tech-chip">${t}</span>`).join('')}
+                </div>
+            `;
+            projectsGrid.appendChild(panel);
+        });
+
+        // Populate Experience
+        const experienceData = [
+            {
+                date: 'SEPTEMBER 2023 - PRESENT',
+                title: 'Control Systems Software Engineer',
+                company: 'Bridge12 Technologies • Natick, MA',
+                points: [
+                    'Co-lead multithreaded control software development using Qt, C++, Python, and QML',
+                    'Built custom Linux distributions for NVIDIA Jetson using Yocto Project',
+                    'Optimized network latency by 70% using ZeroMQ (5s → <1.5s)',
+                    'Developed ML algorithm processing 100,000+ data points in <75ms',
+                    'Cross-platform Android/iOS development with networking protocols',
+                    'Deploy systems at customer sites with live testing and debugging'
+                ]
+            },
+            {
+                date: 'MAY 2022 - OCTOBER 2022',
+                title: 'Software Engineering Intern',
+                company: 'Ekotrope • Boston, MA',
+                points: [
+                    'Full-stack development for energy modeling SaaS in Agile environment',
+                    'Developed RESTful APIs using Java, Maven, and AWS',
+                    'Refactored database improving transaction speed by 20%',
+                    'Created JUnit test suites reducing defects by 18%'
+                ]
+            },
+            {
+                date: 'AUGUST 2019 - MAY 2023',
+                title: 'BS Computer Science & Robotics Engineering',
+                company: 'Worcester Polytechnic Institute',
+                points: [
+                    'GPA: 3.8/4.0',
+                    'Dean\'s List (All Semesters) | Presidential Scholarship',
+                    'UPE Honor Society | Rho Beta Epsilon | SWEET Fellowship'
+                ]
+            }
+        ];
+
+        const experienceTimeline = document.querySelector('.experience-timeline');
+        experienceData.forEach(exp => {
+            const item = document.createElement('div');
+            item.className = 'experience-item';
+            item.innerHTML = `
+                <div class="experience-dot"></div>
+                <div class="experience-content">
+                    <div class="experience-date">${exp.date}</div>
+                    <h3 class="experience-title">${exp.title}</h3>
+                    <div class="experience-company">${exp.company}</div>
+                    <div class="experience-desc">
+                        <ul>
+                            ${exp.points.map(p => `<li>${p}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            experienceTimeline.appendChild(item);
+        });
+
+        // Populate Certifications
+        const certsData = [
+            {
+                badge: '🏆',
+                title: 'J.P. Morgan - Software Engineering',
+                issuer: 'Forage • January 2026',
+                desc: 'Integrated Kafka into Spring Boot microservice. Implemented validation and persistence with Spring Data JPA. Developed REST endpoints.'
+            },
+            {
+                badge: '🏆',
+                title: 'J.P. Morgan - Quantitative Research',
+                issuer: 'Forage • January 2026',
+                desc: 'Analyzed loan portfolios to estimate default probability. Used dynamic programming for FICO score categorization.'
+            },
+            {
+                badge: '🏆',
+                title: 'Electronic Arts - Software Engineering',
+                issuer: 'Forage • January 2026',
+                desc: 'Built class diagrams and C++ headers. Patched bugfixes and optimized codebase with improved data structures.'
+            },
+            {
+                badge: '🏆',
+                title: 'Walmart USA - Advanced Software Engineering',
+                issuer: 'Forage • January 2026',
+                desc: 'Developed novel heap data structure in Java. Designed UML diagrams and entity relationship diagrams.'
+            }
+        ];
+
+        const certsGrid = document.querySelector('.certifications-grid');
+        certsData.forEach(cert => {
+            const card = document.createElement('div');
+            card.className = 'cert-card';
+            card.innerHTML = `
+                <div class="cert-badge">${cert.badge}</div>
+                <h3 class="cert-title">${cert.title}</h3>
+                <div class="cert-issuer">${cert.issuer}</div>
+                <p class="cert-desc">${cert.desc}</p>
+            `;
+            certsGrid.appendChild(card);
         });
 
         // Smooth Scroll
@@ -1437,17 +1802,6 @@
                 }
             });
         });
-
-        // Interactive hover effects
-        document.querySelectorAll('.stat-panel, .project-panel, .cert-card, .experience-content').forEach(panel => {
-            panel.addEventListener('mouseenter', function () {
-                this.style.zIndex = '10';
-            });
-            panel.addEventListener('mouseleave', function () {
-                this.style.zIndex = '1';
-            });
-        });
     </script>
 </body>
-
 </html>
