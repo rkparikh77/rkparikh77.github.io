@@ -285,7 +285,7 @@ class RahilParikh:
         self.role = "Control Systems Software Engineer"
         self.company = "Bridge12 Technologies"
         self.education = "BS CS + Robotics Engineering @ WPI"
-        self.gpa = 3.8
+        self.gpa = 4.0
         self.location = "Framingham, MA"
         
     def skills(self):
@@ -323,7 +323,7 @@ class RahilParikh:
 - Created test suites reducing defects by 18%
 
 **🔷 Worcester Polytechnic Institute** (Aug 2019 - May 2023)
-- GPA: 3.8/4.0
+- GPA: 4.0/4.0
 - Dean's List (All Semesters)
 - Presidential Scholarship
 - UPE Honor Society
