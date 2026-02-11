@@ -62,9 +62,6 @@
   "jest": {
     "transformIgnorePatterns": [
       "node_modules/(?!(gsap)/)"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
     ]
   },
   "lint-staged": {
