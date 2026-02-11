@@ -59,6 +59,14 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(gsap)/)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
+  },
   "lint-staged": {
     "*.json": "prettier-package-json --write",
     "*.{js,css,md}": "prettier --write"
