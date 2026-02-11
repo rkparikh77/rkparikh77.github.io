@@ -195,4 +195,52 @@ export const materialTealTheme = {
   splashBg: "#05505E",
 };
 
+// Indian Monsoon Theme - Immersive scroll experience
+export const indianMonsoonTheme = {
+  // Core colors
+  body: "#0d1117", // Rich dark background
+  text: "#f0f6fc", // Light text for dark mode
+  expTxtColor: "#f0f6fc", // Experience text
+
+  // Primary palette
+  primary: "#1a237e", // Deep indigo (night sky)
+  accent: "#ff6f00", // Saffron/gold (diyas, highlights)
+  secondary: "#00695c", // Emerald green (landscape)
+
+  // Rain/atmosphere
+  rain: "#64b5f6", // Light blue (rain drops)
+  mist: "rgba(100, 181, 246, 0.1)", // Misty overlay
+  lightning: "#ffd54f", // Lightning flash
+
+  // UI elements
+  highlight: "#ff6f00",
+  dark: "#0d1117",
+  secondaryText: "#8b949e",
+  imageHighlight: "#ff6f00",
+  compImgHighlight: "#1a237e",
+  jacketColor: "#1a237e",
+  headerColor: "rgba(26, 35, 126, 0.8)",
+  splashBg: "#0d1117",
+
+  // Scene-specific colors
+  preMonsoonSky:
+    "linear-gradient(180deg, #1a237e 0%, #311b92 50%, #4a148c 100%)",
+  monsoonSky: "linear-gradient(180deg, #263238 0%, #37474f 50%, #455a64 100%)",
+  afterRainSky:
+    "linear-gradient(180deg, #ff6f00 0%, #ff8f00 30%, #1a237e 100%)",
+
+  // Peacock colors
+  peacockBlue: "#00838f",
+  peacockGreen: "#00695c",
+  peacockGold: "#ffc107",
+
+  // Diya glow
+  diyaFlame: "#ff6f00",
+  diyaGlow: "rgba(255, 111, 0, 0.4)",
+
+  // Lotus
+  lotusPink: "#ec407a",
+  lotusLeaf: "#2e7d32",
+};
+
 export const chosenTheme = blueTheme;
