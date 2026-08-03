@@ -771,6 +771,27 @@
             transform: translateY(-2px);
         }
 
+        .project-repo {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 22px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--primary);
+            text-decoration: none;
+            border: 1px solid var(--primary);
+            clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+            transition: all 0.3s;
+        }
+
+        .project-repo:hover {
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
         /* Experience Timeline */
         .experience-section {
             padding: 100px 60px;
@@ -1176,13 +1197,14 @@
                     <span class="glitch" data-text="PARIKH">PARIKH</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Control Systems Software Engineer | Robotics Architect | ML Developer
+                    Incoming M.S.E. Robotics @ Penn GRASP | Control Systems Software Engineer | Robotics &amp; RL
                 </p>
                 <p class="hero-tagline">
                     // BUILDING AUTONOMOUS SYSTEMS FOR TOMORROW
                 </p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn-holo">VIEW SYSTEMS</a>
+                    <a href="resume.pdf" class="btn-holo" target="_blank" rel="noopener">RESUME</a>
+                    <a href="#projects" class="btn-holo secondary">VIEW SYSTEMS</a>
                     <a href="#skills" class="btn-holo secondary">EXPLORE SKILLS</a>
                 </div>
             </div>
@@ -1283,10 +1305,10 @@
                 READY TO COLLABORATE ON NEXT-GENERATION ROBOTICS & AI SYSTEMS
             </p>
             <div class="contact-links">
-                <a href="mailto:parikhrahil7@gmail.com" class="contact-chip">EMAIL_PROTOCOL</a>
-                <a href="https://linkedin.com/in/rahilp7" class="contact-chip" target="_blank">LINKEDIN_NET</a>
-                <a href="https://github.com/rkparikh77" class="contact-chip" target="_blank">GITHUB_REPO</a>
-                <a href="#" class="contact-chip">RESUME_FILE</a>
+                <a href="mailto:rahilpar@engineering.upenn.edu" class="contact-chip">EMAIL_PROTOCOL</a>
+                <a href="https://www.linkedin.com/in/rahilp7/" class="contact-chip" target="_blank" rel="noopener">LINKEDIN_NET</a>
+                <a href="https://github.com/rkparikh77" class="contact-chip" target="_blank" rel="noopener">GITHUB_REPO</a>
+                <a href="resume.pdf" class="contact-chip" target="_blank" rel="noopener">RESUME_FILE</a>
             </div>
         </div>
     </section>
@@ -1711,55 +1733,79 @@
         const projectsData = [
             {
                 id: '01',
-                title: 'HUMANOID LOCOMOTION',
-                date: 'AUG 2022 - AUG 2024',
-                desc: 'Led multidisciplinary team of 12 developing inverse kinematics control systems enabling dynamic bipedal balance and human-like gait. Designed and fabricated mechanism achieving stable locomotion. Secured prototype funding through technical presentations to advisory board.',
-                tech: ['PYTHON', 'C++', 'ROS', 'GAZEBO', 'KINEMATICS', 'RVIZ']
+                title: 'GAZEGAIT — ACTIVE PERCEPTION',
+                date: 'APR 2026 - PRESENT',
+                desc: 'A quadruped whose pan-tilt depth camera is policy-controlled: a single recurrent policy outputs joint targets and gaze rate commands, so the robot learns where to look while learning how to walk. Driven by an information-gain intrinsic reward grounded in a terrain-predictor\'s error on future foothold heights. Evaluated with foothold anticipation distance, saccade–gait phase locking, and gaze–terrain mutual information.',
+                tech: ['ISAAC LAB', 'PYTORCH', 'RSL-RL']
             },
             {
                 id: '02',
-                title: 'PREDICTIVE ML ENGINE',
-                date: 'SEPT 2024 - PRESENT',
-                desc: 'End-to-end pipeline achieving 90% directional accuracy for stock market forecasting using LSTM networks. Implemented data preprocessing, training workflows, and interactive visualizations. Deployed via Docker containers with real-time REST API inference capabilities.',
-                tech: ['TENSORFLOW', 'LSTM', 'DOCKER', 'REST API', 'SCIKIT-LEARN', 'MATPLOTLIB']
+                title: 'QUADRUPED LOCOMOTION · DEEP RL',
+                date: 'NOV 2025 - PRESENT',
+                desc: 'Four PPO locomotion policies on ANYmal-C across 4,096 parallel environments and a flat/slope/stairs terrain curriculum. Leave-one-out reward ablation quantifying the reward–behavior gap: removing foot slip raised reward +32.6% while halving walking distance; terrain clearance was most valuable at −20.2% task return when removed.',
+                tech: ['ISAAC LAB', 'RSL-RL', 'PPO'],
+                repo: 'https://github.com/rkparikh77/isaac-lab-locomotion'
             },
             {
                 id: '03',
-                title: 'AUTONOMOUS NAV SYSTEM',
-                date: 'OCT 2021 - DEC 2021',
-                desc: 'SLAM implementation with 2D LiDAR achieving 95% navigation success in complex environments. Integrated A* pathfinding with AMCL localization and particle filters for precision indoor mapping.',
-                tech: ['ROS', 'LIDAR', 'SLAM', 'C++', 'GMAPPING', 'AMCL']
+                title: 'HURON — BIPEDAL HUMANOID',
+                date: 'AUG 2022 - MAY 2023',
+                desc: 'Senior capstone. Led a 12-person team and owned the controls stack — foot-force stability-margin analysis and IK gait generation with ZMP feedback, sub-50 ms reactive balance on hardware. Secured $15,000 in prototype funding.',
+                tech: ['C++', 'ROS', 'GAZEBO']
             },
             {
                 id: '04',
+                title: 'MOTIONMD — GAIT ANALYSIS',
+                date: '2024',
+                desc: 'Markerless clinical gait analysis: a monocular video pipeline extracting clinically meaningful gait metrics, with automated reporting and failure-mode evaluation across occlusion, viewpoint, and lighting.',
+                tech: ['PYTHON', 'MEDIAPIPE', 'OPENCV'],
+                repo: 'https://github.com/rkparikh77/motionmd'
+            },
+            {
+                id: '05',
+                title: 'AUTONOMOUS ROBOT NAVIGATION',
+                date: '2021',
+                desc: 'Full autonomy stack: SLAM, particle-filter localization, A*/move_base planning, Kalman-filtered LiDAR–odometry fusion.',
+                tech: ['C++', 'ROS', 'LIDAR']
+            },
+            {
+                id: '06',
+                title: 'PREDICTIVE ML ENGINE',
+                date: 'SEPT 2024 - PRESENT',
+                desc: 'End-to-end pipeline achieving 90% directional accuracy for stock market forecasting using LSTM networks. Implemented data preprocessing, training workflows, and interactive visualizations. Deployed via Docker containers with real-time REST API inference capabilities.',
+                tech: ['TENSORFLOW', 'LSTM', 'DOCKER', 'REST API', 'SCIKIT-LEARN', 'MATPLOTLIB'],
+                repo: 'https://github.com/rkparikh77/stock-market-prediction'
+            },
+            {
+                id: '07',
                 title: 'HOSPITAL MANAGEMENT',
                 date: 'JAN 2021 - MAR 2021',
                 desc: 'Architected full-stack application with OAuth 2.0 authentication, role-based access control, and Google Maps API for indoor navigation with floor-level accuracy. Led team of 12 developers.',
                 tech: ['JAVA', 'SQL', 'REST API', 'OAUTH 2.0', 'GOOGLE MAPS']
             },
             {
-                id: '05',
+                id: '08',
                 title: 'MOTION PLANNING',
                 date: 'AUG 2021 - OCT 2021',
                 desc: 'Developed color-sorting algorithm utilizing computer vision achieving 100% accuracy. Implemented trajectory generation through forward and inverse kinematics using OOP in C++ and MATLAB.',
                 tech: ['C++', 'MATLAB', 'CV', 'KINEMATICS']
             },
             {
-                id: '06',
+                id: '09',
                 title: 'AI PATHFINDING',
                 date: 'JAN 2021 - MAR 2021',
                 desc: 'Implemented advanced search algorithms including Iterative Deepening Search, A*, Hill-Climbing, and Genetic Search to solve Heavy Queens Chess problem.',
                 tech: ['JAVA', 'PYTHON', 'A*', 'GENETIC ALGO']
             },
             {
-                id: '07',
+                id: '10',
                 title: 'SOLAR PANEL ROBOT',
                 date: 'JAN 2020 - MAR 2020',
                 desc: 'Designed autonomous robot to replace solar collector panels achieving 100% reliability in control, dynamics, and mechanical design tests.',
                 tech: ['C', 'C++', 'CONTROLS', 'SENSORS']
             },
             {
-                id: '08',
+                id: '11',
                 title: 'EMOTICON COMPILER',
                 date: 'JAN 2020 - FEB 2020',
                 desc: 'Developed emoticon programming language using large language models to articulate content through emojis. Competed at WPI Hackathon with 20 teams.',
@@ -1779,6 +1825,7 @@
                 <div class="project-tech">
                     ${project.tech.map(t => `<span class="tech-chip">${t}</span>`).join('')}
                 </div>
+                ${project.repo ? `<a class="project-repo" href="${project.repo}" target="_blank" rel="noopener">VIEW REPOSITORY ↗</a>` : ''}
             `;
             projectsGrid.appendChild(panel);
         });
@@ -1786,7 +1833,16 @@
         // Populate Experience
         const experienceData = [
             {
-                date: 'SEPTEMBER 2023 - PRESENT',
+                date: 'FALL 2026 - 2028 (EXPECTED)',
+                title: 'M.S.E. Robotics — Incoming',
+                company: 'University of Pennsylvania • GRASP Lab',
+                points: [
+                    'Incoming M.S.E. Robotics student, GRASP Laboratory',
+                    'Program begins Fall 2026 • Expected 2028'
+                ]
+            },
+            {
+                date: 'SEPTEMBER 2023 - APRIL 2026',
                 title: 'Control Systems Software Engineer',
                 company: 'Bridge12 Technologies • Natick, MA',
                 points: [
@@ -1811,10 +1867,10 @@
             },
             {
                 date: 'AUGUST 2019 - MAY 2023',
-                title: 'BS Computer Science & Robotics Engineering',
+                title: 'Dual B.S. Robotics Engineering & Computer Science',
                 company: 'Worcester Polytechnic Institute',
                 points: [
-                    'GPA: 4.0/4.0',
+                    'Graduated with distinction • GPA: 4.0/4.0',
                     'Dean\'s List (All Semesters) | Presidential Scholarship',
                     'UPE Honor Society | Rho Beta Epsilon | SWEET Fellowship'
                 ]
